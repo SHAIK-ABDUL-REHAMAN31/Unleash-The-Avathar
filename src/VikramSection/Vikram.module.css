@@ -1,0 +1,307 @@
+/* ─── Vikram Character Section ─── */
+.vikramSection {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: #ffffff;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 2rem 4rem 2rem;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.vikramInner {
+    max-width: 1300px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    z-index: 10;
+    position: relative;
+}
+
+/* ─── Columns ─── */
+.leftColumn {
+    flex: 0 0 22%;
+    max-width: 22%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 15rem;
+    /* Ratings shifted slightly higher up */
+    z-index: 15;
+}
+
+.centerColumn {
+    flex: 0 0 56%;
+    max-width: 56%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 10;
+}
+
+.rightColumn {
+    flex: 0 0 22%;
+    max-width: 22%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 15rem;
+    /* Paragraphs shifted slightly higher up */
+    z-index: 15;
+}
+
+/* ─── Poses Container & Wrappers ─── */
+.posesContainer {
+    position: relative;
+    width: 100%;
+    height: 540px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    left: -20px; /* Shift characters slightly left to balance visual alignment under heading */
+}
+
+@media (min-width: 768px) {
+    .posesContainer {
+        height: 660px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .posesContainer {
+        height: 780px;
+    }
+}
+
+.poseWrapper {
+    position: absolute;
+    bottom: 1rem;
+    /* Shift characters slightly up from bottom of section */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.poseImage {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Pose 1 is the main center image, slightly bigger, positioned in front */
+.pose1 {
+    width: 62%;
+    left: 19%;
+    z-index: 12;
+}
+
+.pose1 .poseImage {
+    max-height: 100%;
+}
+
+/* Pose 2: Left background image, slightly smaller, positioned behind */
+.pose2 {
+    width: 52%;
+    left: 0%;
+    z-index: 11;
+}
+
+.pose2 .poseImage {
+    max-height: 94%;
+}
+
+/* Pose 3: Right background image, slightly smaller, positioned behind */
+.pose3 {
+    width: 52%;
+    right: 0%;
+    z-index: 11;
+}
+
+.pose3 .poseImage {
+    max-height: 94%;
+}
+
+/* ─── Heading "VIKRAM" in Background (Geist Font, Large & Light Weight) ─── */
+.vikramHeading {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: clamp(6rem, 16vw, 13.5rem);
+    /* Massive font size as requested */
+    font-weight: 200;
+    /* Thin weight, normal text not bold */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 0.8;
+    color: #000000;
+    /* Solid black */
+    text-align: center;
+    margin: 0;
+    pointer-events: none;
+    user-select: none;
+    z-index: 2;
+    /* behind the inner content z-10 */
+    width: 100%;
+}
+
+/* ─── Stats Grid (Left Column) ─── */
+.statItem {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.8rem;
+}
+
+.statLabel {
+    font-size: clamp(0.85rem, 1.3vw, 1rem);
+    font-weight: 400;
+    /* normal weight, not bold */
+    color: #1a1a1a;
+    font-family: var(--font-geist-sans), 'Outfit', 'Inter', sans-serif;
+    text-transform: none;
+    /* title case format */
+    letter-spacing: 0.02em;
+    min-width: 6.5rem;
+}
+
+.statStars {
+    display: flex;
+    gap: 3px;
+    font-size: 1rem;
+    /* slightly smaller stars */
+}
+
+.starFilled {
+    color: #aa7c11;
+}
+
+.starEmpty {
+    color: rgba(0, 0, 0, 0.15);
+    /* Grey outline */
+}
+
+/* ─── Description (Right Column) ─── */
+.chosenWrapper {
+    position: relative;
+    min-height: 1.8rem;
+}
+
+.chosenPlaceholder {
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+    font-weight: 400;
+    /* normal weight, not bold */
+    color: transparent;
+    line-height: 1.3;
+}
+
+.chosenText {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+    font-weight: 400;
+    /* normal weight, not bold */
+    color: #1a1a1a;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.powersBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-top: 0.4rem;
+}
+
+.powerLine {
+    font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+    font-weight: 400;
+    /* normal weight, not bold */
+    color: #1a1a1a;
+    line-height: 1.3;
+    margin: 0;
+}
+
+/* ─── Responsive Stacking ─── */
+@media (max-width: 1024px) {
+    .vikramSection {
+        padding: 6rem 2rem 4rem 2rem;
+    }
+
+    .vikramInner {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .leftColumn,
+    .rightColumn {
+        flex: none;
+        max-width: 100%;
+        width: 100%;
+        align-items: center;
+        padding-bottom: 0;
+    }
+
+    .centerColumn {
+        flex: none;
+        max-width: 100%;
+        width: 100%;
+        order: -1;
+        /* Display characters above text on mobile */
+    }
+
+    .posesContainer {
+        height: 480px;
+        max-width: 400px;
+        left: 0; /* Reset shift on mobile so characters remain perfectly centered */
+    }
+
+    .pose1 {
+        width: 58%;
+        left: 21%;
+    }
+
+    .pose2 {
+        width: 48%;
+        left: 0%;
+    }
+
+    .pose3 {
+        width: 48%;
+        right: 0%;
+    }
+
+    .vikramHeading {
+        top: 3%;
+        font-size: clamp(3rem, 14vw, 7.5rem);
+    }
+
+    .statItem {
+        justify-content: center;
+    }
+
+    .chosenWrapper {
+        min-height: 2rem;
+        text-align: center;
+    }
+
+    .powersBlock {
+        align-items: center;
+        text-align: center;
+    }
+}

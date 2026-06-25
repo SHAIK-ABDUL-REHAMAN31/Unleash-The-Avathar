@@ -1,0 +1,143 @@
+/* ═══════════════════════════════════════════════════
+   Combat Section — Master the Chakra
+   ═══════════════════════════════════════════════════ */
+
+.combatSection {
+    position: relative;
+    width: 100%;
+    background: #0a0a0a;
+    z-index: 10;
+    /* Removed overflow: hidden and flex layouts to allow sticky children */
+}
+
+/* ─── Sticky Card Containers ─── */
+.combatCard {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    background: #0a0a0a;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 2rem;
+    box-sizing: border-box;
+    font-family: var(--font-geist-sans), 'Inter', sans-serif;
+}
+
+.combatInner {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* ─── Label ("Combat") ─── */
+.combatLabel {
+    font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.04em;
+    text-transform: none;
+    margin: 0;
+}
+
+/* ─── Heading ("Master the Chakra") ─── */
+.combatHeading {
+    font-size: clamp(2.4rem, 5.5vw, 4.5rem);
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.1;
+    text-transform: none;
+    letter-spacing: -0.02em;
+    margin: 0.3rem 0 0 0;
+}
+
+/* ─── Content Row: Video + Description ─── */
+.combatContent {
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+    width: 100%;
+}
+
+/* ─── Video Wrapper ─── */
+.videoWrapper {
+    flex: 0 0 58%;
+    max-width: 58%;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #111;
+    position: relative;
+}
+
+.videoElement {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+}
+
+/* ─── Description Block ─── */
+.descriptionBlock {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+.descriptionWrapper {
+    position: relative;
+    min-height: 6rem;
+}
+
+.descriptionPlaceholder {
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+    font-weight: 400;
+    color: transparent;
+    line-height: 1.7;
+}
+
+.descriptionText {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ─── Responsive Stacking ─── */
+@media (max-width: 1024px) {
+    .combatCard {
+        height: auto;
+        min-height: 100vh;
+        padding: 5rem 1.5rem;
+    }
+
+    .combatContent {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .videoWrapper {
+        flex: none;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .descriptionBlock {
+        padding-top: 0;
+    }
+}
