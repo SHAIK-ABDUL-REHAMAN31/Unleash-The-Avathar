@@ -34,6 +34,7 @@ export default function IntroReveal({ onComplete }) {
         duration: 1.4,
         ease: "power4.out",
         stagger: 0.2,
+        force3D: true,
       }
     );
 
@@ -47,6 +48,7 @@ export default function IntroReveal({ onComplete }) {
       duration: 0.8,
       ease: "power3.in",
       stagger: 0.1,
+      force3D: true,
     });
 
     // 4. White bars slide/shrink up staggered from right to left
@@ -88,7 +90,10 @@ export default function IntroReveal({ onComplete }) {
       <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-10 px-4">
         {/* Line 1: DIVE   INTO */}
         <div className="overflow-hidden py-1">
-          <h1 className="intro-text-line text-[#06070a] font-sans text-5xl sm:text-7xl md:text-8xl font-normal tracking-wide flex items-center justify-center">
+          <h1 
+            className="intro-text-line text-[#06070a] font-sans text-5xl sm:text-7xl md:text-8xl font-normal tracking-wide flex items-center justify-center"
+            style={{ willChange: "transform, opacity" }}
+          >
             <span>DIVE</span>
             <span className="w-10 sm:w-16 md:w-24"></span>
             <span>INTO</span>
@@ -97,7 +102,10 @@ export default function IntroReveal({ onComplete }) {
 
         {/* Line 2: VISHWAPUR */}
         <div className="overflow-hidden py-1 mt-1 sm:mt-2">
-          <h1 className="intro-text-line text-[#2b5a9e] font-sans text-5xl sm:text-7xl md:text-8xl font-semibold tracking-wide">
+          <h1 
+            className="intro-text-line text-[#2b5a9e] font-sans text-5xl sm:text-7xl md:text-8xl font-normal tracking-wide text-center"
+            style={{ willChange: "transform, opacity" }}
+          >
             VISHWAPUR
           </h1>
         </div>

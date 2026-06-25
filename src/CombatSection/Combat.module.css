@@ -91,26 +91,7 @@
     padding-top: 2rem;
 }
 
-.descriptionWrapper {
-    position: relative;
-    min-height: 6rem;
-}
-
-.descriptionPlaceholder {
-    opacity: 0;
-    pointer-events: none;
-    user-select: none;
-    font-size: clamp(0.95rem, 1.4vw, 1.1rem);
-    font-weight: 400;
-    color: transparent;
-    line-height: 1.7;
-}
-
 .descriptionText {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
     font-size: clamp(0.95rem, 1.4vw, 1.1rem);
     font-weight: 400;
     color: rgba(255, 255, 255, 0.8);

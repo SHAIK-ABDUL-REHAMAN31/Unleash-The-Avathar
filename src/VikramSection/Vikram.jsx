@@ -67,7 +67,7 @@ export default function Vikram() {
     tl.fromTo(
       pose1Ref.current,
       { opacity: 0, scale: 0.9, y: 30 },
-      { opacity: 1, scale: 1, y: 0, duration: 1.2, ease: "power3.out" },
+      { opacity: 1, scale: 1, y: 0, duration: 1.2, ease: "power3.out", force3D: true },
       "-=0.6"
     );
 
@@ -75,14 +75,14 @@ export default function Vikram() {
     tl.fromTo(
       pose2Ref.current,
       { opacity: 0, x: 80 }, // starts closer to center, slides left
-      { opacity: 1, x: 0, duration: 1.4, ease: "power3.out" },
+      { opacity: 1, x: 0, duration: 1.4, ease: "power3.out", force3D: true },
       "-=0.8"
     );
 
     tl.fromTo(
       pose3Ref.current,
       { opacity: 0, x: -80 }, // starts closer to center, slides right
-      { opacity: 1, x: 0, duration: 1.4, ease: "power3.out" },
+      { opacity: 1, x: 0, duration: 1.4, ease: "power3.out", force3D: true },
       "-=1.4"
     );
 

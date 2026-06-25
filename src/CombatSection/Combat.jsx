@@ -59,7 +59,7 @@ function CombatCard({ data, sectionRef, zIndex }) {
     tl.fromTo(
       labelRef.current,
       { opacity: 0, y: 40 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "power4.out" }
+      { opacity: 1, y: 0, duration: 0.8, ease: "power4.out", force3D: true }
     );
 
     // 2. Heading words slide up one by one
@@ -74,6 +74,7 @@ function CombatCard({ data, sectionRef, zIndex }) {
           stagger: 0.12,
           duration: 1.0,
           ease: "power4.out",
+          force3D: true,
         },
         "-=0.4"
       );
@@ -83,16 +84,16 @@ function CombatCard({ data, sectionRef, zIndex }) {
     tl.fromTo(
       videoRef.current,
       { opacity: 0, y: 40, scale: 0.96 },
-      { opacity: 1, y: 0, scale: 1, duration: 1.2, ease: "power3.out" },
+      { opacity: 1, y: 0, scale: 1, duration: 1.2, ease: "power3.out", force3D: true },
       "-=0.6"
     );
 
-    // 4. Typewriter effect for description
+    // 4. Smooth slide up for description
     tl.fromTo(
       descRef.current,
-      { text: "" },
-      { text: data.description, duration: 2.5, ease: "none" },
-      "-=0.8"
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 1.2, ease: "power3.out", force3D: true },
+      "-=0.6"
     );
   }, { scope: cardRef });
 
@@ -138,16 +139,12 @@ function CombatCard({ data, sectionRef, zIndex }) {
             />
           </div>
 
-          {/* Description — typewriter text */}
+          {/* Description — smooth slide up */}
           <div className={styles.descriptionBlock}>
-            <div className={styles.descriptionWrapper}>
-              <p
-                className={styles.descriptionPlaceholder}
-                aria-hidden="true"
-              >
+            <div className="overflow-hidden">
+              <p ref={descRef} className={styles.descriptionText}>
                 {data.description}
               </p>
-              <p ref={descRef} className={styles.descriptionText}></p>
             </div>
           </div>
         </div>
